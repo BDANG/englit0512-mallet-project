@@ -24,14 +24,16 @@ class TopicDistribution:
 
             #split the line in mallet file by space
             splits = line.split(" ")
-            filename = splits[1].split("/")[-1] #get the filename, which is the last element of the path
-            if (filename != self.filename): #don't care about data for the other filenames
-                continue
-
             topicNum = int(splits[5])
-            topicOrder.append(topicNum) #add the topic number to the end of the list
+            filename = splits[1].split("/")[-1] #get the filename, which is the last element of the path
+
             if topicNum not in uniqueTopicNumbers: #don't forget to maintain the list of unique topic numbers
                 uniqueTopicNumbers.append(topicNum)
+
+            if (filename != self.filename): #don't care about data for the other filenames
+                continue
+            topicOrder.append(topicNum) #add the topic number to the end of the list
+
 
         malletFile.close()
 
@@ -91,7 +93,10 @@ class TopicDistribution:
             totalTopicCount = totalTopicOccurences[topicNum]
             for d in distributionList:
                 #percentage distribution is the # of occurences (d) divided by the total # of occurences
-                percentDistribution[topicNum].append(float(d)/float(totalTopicCount))
+                if totalTopicCount != 0:
+                    percentDistribution[topicNum].append(float(d)/float(totalTopicCount))
+                else:
+                    percentDistribution[topicNum].append(0)
 
 
         #graph the data
@@ -115,4 +120,4 @@ class TopicDistribution:
                     showticklabels=True
                 )
             )
-        }, filename="../plotly_output/histogram_topic_distribution")
+        }, filename="../plotly_output/linegraph_topic_distribution")

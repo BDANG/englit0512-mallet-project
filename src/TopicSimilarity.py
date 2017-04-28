@@ -29,6 +29,9 @@ class TopicSimilarity:
     #   common words = 3 from (brian, dang, is)
     #   average size = 4.5 from (4+5)/2
     #   similarity = .666
+    #
+    #   wordSet1: a set of unique words found in a topic
+    #   wordSet2: a set of unique words foun in a topic
     def calc_similarity(self, wordSet1, wordSet2):
         intersectionLength = len(wordSet1.intersection(wordSet2)) # number of common words
         avgLength = float(len(wordSet1)+len(wordSet2))/2 #average length
