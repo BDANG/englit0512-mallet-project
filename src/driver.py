@@ -1,6 +1,7 @@
 #This python program is designed to showcase the functionality of my work
 import sys
 from TopicSimilarity import TopicSimilarity
+from TopicDistribution import TopicDistribution
 
 MALLET_MODEL = None
 def main(args):
@@ -18,12 +19,16 @@ def main(args):
         print "\t1. Topic Distribution Over the Course of a Text"
         print "\t2. Topic Similarity"
         print "\tq. To quit"
-        choice = str(input("Choice: "))
+        choice = raw_input("Choice: ")
         if (choice == "1"):
             print "Topic Distribution"
+            fileToAnalyze = raw_input("What file (must be in "+MALLET_MODEL+") do you want to see the distribution?")
+            TopicDistribution(MALLET_MODEL, fileToAnalyze).create()
         elif (choice == "2"):
             print "Topic Similarity"
             TopicSimilarity(MALLET_MODEL).create()
+        elif (choice == "q"):
+            break
         else:
             print "\n\nThe choice was not recognized. Just enter the number corresponding to the option."
             try:
