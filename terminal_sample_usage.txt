@@ -1,0 +1,88 @@
+Brians-MacBook-Pro-6:src briandang$ ls
+TopicDistribution.py	TopicProximity.pyc	driver.py
+TopicDistribution.pyc	TopicSimilarity.py
+TopicProximity.py	TopicSimilarity.pyc
+Brians-MacBook-Pro-6:src briandang$ python driver.py ../books_10_topics 
+
+Here are your options:
+	1. Topic Distribution Over the Course of a Text
+	2. Topic Similarity
+	3. Topic Proximity for a Text
+	q. To quit
+Choice: 1
+
+Here are the possible files for distribution analysis:
+	AdventuresOfHuckleberryFinnByMarkTwain.txt
+	AliceAdventuresinWonderlandbyLewisCarroll.txt
+	BeowulfbyJLesslieHall.txt
+	DublinersbyJamesJoyce.txt
+	LesMiserablesbyVictorHugo.txt
+	LeviathanbyThomasHobbes.txt
+	MetamorphisisByFranzKafka.txt
+	PeterPanbyJMBarrie.txt
+	PrideandPrejudicebyJaneAusten.txt
+	TheAdventuresofSherlockHolmesbyArthurConanDoyle.txt
+	TheAdventuresOfTomSawyerByMarkTwain.txt
+	TheCompleteWorksofWilliamShakespearebyWilliamShakespeare.txt
+	TheJungleBookbyRudyardKipling.txt
+	TheYellowWallpaperbyCharlotteGilman.txt
+	UlyssesbyJamesJoyce.txt
+What file (must be in ../books_10_topics) do you want to see the distribution? PeterPanbyJMBarrie.txt
+
+Creating a Topic Distribution for PeterPanbyJMBarrie.txt
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/plotly/offline/offline.py:259: UserWarning:
+
+Your filename `../plotly_output/linegraph_topic_distribution` didn't end with .html. Adding .html to the end of your file.
+
+
+Here are your options:
+	1. Topic Distribution Over the Course of a Text
+	2. Topic Similarity
+	3. Topic Proximity for a Text
+	q. To quit
+Choice: 2
+
+Creating a Heatmap of Topic Similarity for: ../books_10_topics
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/plotly/offline/offline.py:259: UserWarning:
+
+Your filename `../plotly_output/heatmap_topic_similarity` didn't end with .html. Adding .html to the end of your file.
+
+
+Here are your options:
+	1. Topic Distribution Over the Course of a Text
+	2. Topic Similarity
+	3. Topic Proximity for a Text
+	q. To quit
+Choice: 3
+
+Here are the possible files for distribution analysis:
+	AdventuresOfHuckleberryFinnByMarkTwain.txt
+	AliceAdventuresinWonderlandbyLewisCarroll.txt
+	BeowulfbyJLesslieHall.txt
+	DublinersbyJamesJoyce.txt
+	LesMiserablesbyVictorHugo.txt
+	LeviathanbyThomasHobbes.txt
+	MetamorphisisByFranzKafka.txt
+	PeterPanbyJMBarrie.txt
+	PrideandPrejudicebyJaneAusten.txt
+	TheAdventuresofSherlockHolmesbyArthurConanDoyle.txt
+	TheAdventuresOfTomSawyerByMarkTwain.txt
+	TheCompleteWorksofWilliamShakespearebyWilliamShakespeare.txt
+	TheJungleBookbyRudyardKipling.txt
+	TheYellowWallpaperbyCharlotteGilman.txt
+	UlyssesbyJamesJoyce.txt
+What file (must be in ../books_10_topics) do you want to see the Topic Proximity? PeterPanbyJMBarrie.txt
+
+Creating a Heatmap of Topic Proximity for: ../books_10_topics
+/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/plotly/offline/offline.py:259: UserWarning:
+
+Your filename `../plotly_output/heatmap_topic_proximity` didn't end with .html. Adding .html to the end of your file.
+
+
+Here are your options:
+	1. Topic Distribution Over the Course of a Text
+	2. Topic Similarity
+	3. Topic Proximity for a Text
+	q. To quit
+Choice: q
+Brians-MacBook-Pro-6:src briandang$ 
