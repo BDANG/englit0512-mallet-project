@@ -44,7 +44,7 @@ class TopicSimilarity:
     def create(self):
         print "\nCreating a Heatmap of Topic Similarity for: "+self.malletModel
         topicWordsDict = {} #maps topic number to the unique words in the topic
-        count = 0
+
 
         #open the mallet output and parse it line-by-line
         malletFile = open(self.malletModel, "r")
@@ -63,9 +63,9 @@ class TopicSimilarity:
                 topicWordsDict[topicNum].add(word)
             else: #otherwise, just add the word to the topic num
                 topicWordsDict[topicNum].add(word)
-            count+=1
-            if (count == 700000):
-                break
+
+
+        malletFile.close()
 
         #init 2d array with 0 for the heatmap
         heatdata=[[0 for i in range(len(topicWordsDict.keys()))] for i in range(len(topicWordsDict.keys()))]
@@ -93,13 +93,21 @@ class TopicSimilarity:
 
         #graph the heatmap
         plotly.offline.plot({
-            "data": [trace],
+            "data": [trace], #graph the trace that was populated above
+
+            #format stuff:
             "layout": dict(
+
+                #graph title
                 title = "Topic Similarity",
+
+                #xaxis label
                 xaxis = dict(
                     title = "Topic Number",
                     showticklabels=True
                 ),
+
+                #yaxis label
                 yaxis = dict(
                     title = "Topic Number",
                     showticklabels=True
