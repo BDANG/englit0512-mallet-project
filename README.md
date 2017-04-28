@@ -1,11 +1,17 @@
 # Brian Dang's ENGLIT 0512 Final Project
 This is a repo of my work regarding visualizations of MALLET topic models.
 
+
 ## Notes
  - Currently, it is expected of the user to know how to use the MALLET command line tool.
     - See the Preparation section below for a quick demo.
  - Future work implementing my work should already have a means of automating the MALLET command line as it is trivial operation.
  - Although it is written in Python, you could use Java's ```Runtime.getRuntime().exec("python ...")``` to call the python programs.
+
+### Usage
+ - Please see the Preparation section is you have not already. It requires the user to manually prepare the MALLET model.
+ - In ```src/```, enter ```python driver.py <path to mallet model>``` in your terminal.
+    - This will launch a simple menu-driven program that lets the user create their own visualization
 
 ## Functionality
  1. **Topic Distribution over the Course of a Given Text**
@@ -43,7 +49,7 @@ After extracting with gunzip, you'll have a ```demo_output``` file. This is the 
 
 ```python driver.py <path to demo_output>```
 
-### Understanding the Graphs
+## Understanding the Graphs
 All the sample graphics were created using default MALLET options on the corpus found in ```books/```. Modelling with 10 topics and 20 topics were examined.
  - **Topic Distribution**
     - Topic Distribution of ```Peter Pan``` with 10 Topics ![](sample_output/topic_distribution_peter_10_topics.png?raw=true "Topic Distribution of Peter Pan with 10 Topics")
