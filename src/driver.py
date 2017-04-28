@@ -1,17 +1,21 @@
 #This python program is designed to showcase the functionality of my work
+
 import sys
 from TopicSimilarity import TopicSimilarity
 from TopicDistribution import TopicDistribution
+from TopicProximity import TopicProximity
 
-MALLET_MODEL = None
+MALLET_MODEL = None #global is assigned to the mallet model from the command line argument
 
+#This method simply iterates the mallet file line-by-line
+#and returns a list of the filenames found in the mallet file
 def get_filenames_in_mallet_output(malletfile):
     filenameList = []
     for line in malletfile:
         if line.startswith("#"): #skip the lines starting with #
             continue
-        filename = line.split(" ")[1].split("/")[-1]
-        if filename not in filenameList:
+        filename = line.split(" ")[1].split("/")[-1] #parse the filename (without the path)
+        if filename not in filenameList: #add the filename to the list if it is not in the list already
             filenameList.append(filename)
     return filenameList
 
@@ -36,27 +40,40 @@ def main(args):
         print "You can run as python "+args[0]+" for help"
         sys.exit(-1)
 
+    #get the possible file names to show to the user later
+    possibleFileNames = get_filenames_in_mallet_output(malletfile)
+    malletfile.close()
+
+
     #driver menu
     while True:
         print "\nHere are your options:"
         print "\t1. Topic Distribution Over the Course of a Text"
         print "\t2. Topic Similarity"
+        print "\t3. Topic Proximity for a Text"
         print "\tq. To quit"
         choice = raw_input("Choice: ")
         if (choice == "1"): #topic distribution function
-
-            #get the possible file names to show to the user
-            possibleFileNames = get_filenames_in_mallet_output(malletfile)
+            #show the filenames found in the mallet model
             print ("\nHere are the possible files for distribution analysis:")
             for fname in possibleFileNames:
                 print "\t"+fname
             fileToAnalyze = raw_input("What file (must be in "+MALLET_MODEL+") do you want to see the distribution? ")
 
-            #create instance of the class using the mallet model and the file to analyze
+            #create instance of the class using the mallet model and the filename to analyze
             TopicDistribution(MALLET_MODEL, fileToAnalyze).create()
-        elif (choice == "2"):
+        elif (choice == "2"): #topic similarity
             #create instance of the class using the mallet model and analyze
             TopicSimilarity(MALLET_MODEL).create()
+        elif (choice == "3"): #topic proximity
+            #show the filenames found in the mallet model
+            print ("\nHere are the possible files for distribution analysis:")
+            for fname in possibleFileNames:
+                print "\t"+fname
+            fileToAnalyze = raw_input("What file (must be in "+MALLET_MODEL+") do you want to see the Topic Proximity? ")
+
+            #create instance of the class using the mallet model and the filename to analyze
+            TopicProximity(MALLET_MODEL, fileToAnalyze).create()
         elif (choice == "q"): #exit
             break
         else:
@@ -66,7 +83,6 @@ def main(args):
             except:
                 continue
 
-    malletfile.close()
 
 
 
