@@ -57,14 +57,18 @@ All the sample graphics were created using default MALLET options on the corpus 
     - Topic Distribution of ```Peter Pan``` with 20 Topics
     ![](sample_output/topic_distribution_peter_20_topics.png?raw=true "Topic Distribution of Peter Pan with 20 Topics")
         - Peter Pan is broken into 25 bins. The last two bins see a dramatic drop in Topic Number 10.
- - Topic Similarity
+
+
+ - **Topic Similarity**
     - Topic Similarity of ```books/``` with 10 topics
     ![](sample_output/topic_similarity_10_topics.png?raw=true "Topic Similarity of books/ with 10 topics")
         - Roughly 11% of the unique words in Topic Number 5 and Topic Number 4 are the same!
     - Topic Similarity of ```books/``` with 20 topics
     ![](sample_output/topic_similarity_20_topics.png?raw=true "Topic Similarity of books/ with 10 topics")
         - Roughly 8% of the unique words in Topic Number 7 and Topic Number 2 are the same!
- - Topic Proximity
+
+
+ - **Topic Proximity**
     - Topic Proximity of ```Peter Pan``` with 10 Topics
     ![](sample_output/topic_proximity_peter_10_topics.png?raw=true "Topic Proximity of Peter Pan with 10 topics")
         - For every 100 words (the top number of the scale), about 84 of the words originate from Topic Number 5 or Topic Number 1
