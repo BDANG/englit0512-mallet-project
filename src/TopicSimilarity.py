@@ -1,3 +1,5 @@
+#This class is used to create a heatmap of topic similarity
+
 import plotly
 import plotly.graph_objs as graphobj
 
